@@ -38,7 +38,6 @@ jobs:
           test -f site/style.css
           test -f site/app.js
           test -f site/data.js
-          node -e "const fs=require('fs');const s=fs.readFileSync('site/data.js','utf8');eval(s);const d=window.PODS_DATA;throw new Error('bad data') if(!d)" 2>/dev/null || \
           node -e "const fs=require('fs');const s=fs.readFileSync('site/data.js','utf8').replace('window.PODS_DATA','global.PODS_DATA');eval(s);if(!global.PODS_DATA||!global.PODS_DATA.entries.length){process.exit(1)}console.log('entries:',global.PODS_DATA.entries.length,'stores:',global.PODS_DATA.stores.length)"
           node --check site/app.js && echo "app.js syntax OK"
 
