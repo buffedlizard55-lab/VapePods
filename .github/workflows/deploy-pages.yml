@@ -1,13 +1,11 @@
 name: Deploy VapePods site to GitHub Pages
 
-# NOTE: only PUSH events (and manual dispatch) can actually publish —
-# pull_request events run with a read-only GITHUB_TOKEN, so the
-# pull_request trigger below only validates the build.
+# NOTE: push events only (no pull_request trigger) — PR events run with
+# a read-only GITHUB_TOKEN and would fail the deploy step, and every PR
+# head update would spawn a run that cancels the push run via concurrency.
 on:
   push:
     branches: [arena/01a0a0f6-vapepods]
-  pull_request:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
