@@ -253,7 +253,8 @@ POD_NOTE_PM = ("STIIIZY Parkmerced pick-up menu, STIIIZY's own ordering domain. 
 # Deals documented on the sale page / store listing:
 DEAL_PM_WED = ("Sundays & Wednesdays: $20.00 STIIIZY 1G OG Pod (Taxes Included) per the store's own listing - "
                "regular menu price for a 1g Original pod is $23.00 (also 'ON SALE')")
-DEAL_PM_B2G1 = "Everyday STIIIZY deal listed on the product page: 'Buy 2, get 1, 50% off' (deal code CA - B2G150 - Stiiizy)"
+DEAL_PM_B2G1 = ("Product page lists this deal code verbatim: 'CA - B2G150 - Stiiizy (10/25 -TBD) MMJV3*'; the store's "
+                "own listing describes the same deal as 'STIIIZY Buy 2, get 1, 50% off'")
 PM_MENU = "https://stiiizy.dispensary.shop/parkmerced/rec/vapes/nb/eg3?brand=STIIIZY&order_by=price&order_dir=asc"
 
 _PM_PODS_05 = [
