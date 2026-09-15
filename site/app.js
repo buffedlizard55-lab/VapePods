@@ -44,6 +44,8 @@
   function verifChip(e) {
     if (e.verified === "live")
       return '<span class="chip chip-live" title="Official page fetched and read on ' + esc(e.verified_date) + '">read ' + esc(e.verified_date) + '</span>';
+    if (e.verified === "live-module")
+      return '<span class="chip chip-module" title="Price read on a related page of the same official site on ' + esc(e.verified_date) + ' - open the product page to confirm">read on a related page ' + esc(e.verified_date) + '</span>';
     return '<span class="chip chip-carry" title="Read on ' + esc(e.verified_date) + ', not re-read on ' + esc(D.verified_date) + '">not re-checked today</span>';
   }
   function srcLabel(kind) {
@@ -67,7 +69,7 @@
   /* ---------------- stat bar ---------------- */
   var best = pods.slice().sort(function (a, b) { return perGramOOT(a) - perGramOOT(b); })[0];
   var nearest = D.stores.slice().sort(function (a, b) { return a.distance_miles - b.distance_miles; })[0];
-  var liveCount = D.entries.filter(function (e) { return e.verified === "live"; }).length;
+  var liveCount = D.entries.filter(function (e) { return e.verified === "live" || e.verified === "live-module"; }).length;
   var stats = [
     [dated.length, "verified price lines", ""],
     [D.stores.length, "stores checked", ""],

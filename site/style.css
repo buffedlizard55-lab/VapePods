@@ -45,6 +45,7 @@ h4{font-size:.82rem; text-transform:uppercase; letter-spacing:.06em; color:var(-
 .chip-carry{background:#33243a; color:#e2b6ff; border-color:#5b3a6b}
 .chip-new{background:#0f3a52; color:#9fdcff; border-color:#1d5f80}
 .chip-live{background:#123d27; color:#7cf0b0; border-color:#1d6b45}
+.chip-module{background:#0f3a52; color:#9fdcff; border-color:#1d5f80}
 .chip-warn{background:#4a1f1c; color:#ffb3a6; border-color:#7a3129}
 .chip-quiet{background:#1b2430; color:var(--muted); border-color:#2b3b4d}
 
