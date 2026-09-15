@@ -448,6 +448,18 @@ for prod, thc, stock, isnew in _um:
 add("Urbana - Mission", "White Widow LQD Pod (Live Resin Liquid Diamonds, 1g)", "pod", "1g", 26.00,
     UM, tax="not-stated", thc="84.43-86.46%", stock="In stock", notes=UM_NOTE)
 
+# more STIIIZY pods read on the same live menu page (chunk 2)
+_um2 = [
+    ("Skywalker OG ORG Pod (1g)", 24.00, "88.03%", "In stock", "pod-hybrid-skywalker-og-org-pod-1g-179475"),
+    ("White Raspberry Org Pod (1g)", 24.00, "87.22%", "Only 7 left", "pod-indica-white-raspberry-org-pod-1g-179459"),
+    ("Gelato ORG Pod (1g)", 24.00, "87.71-88.83%", "In stock", "pod-hybrid-gelato-org-pod-1g-284683"),
+    ("Mango CBD ORG Pod (1g)", 26.00, "45.77% THC / 38.44% CBD", "Only 8 left", "pod-cbd-mango-cbd-org-pod-1g-179537"),
+    ("Northern Lights Lqd Pod (1g)", 26.00, "85.06-87.49%", "Only 9 left", "pod-indica-northern-lights-lqd-pod-1g-179566"),
+]
+for prod, price, thc, stock, slug in _um2:
+    add("Urbana - Mission", prod, "pod", "1g", price, UM + "/" + slug, tax="not-stated",
+        thc=thc, stock=stock, is_new=True, notes=UM_NOTE)
+
 # ===========================================================================
 # STIIIZY DELIVERY (D2C) - tax included
 # ===========================================================================

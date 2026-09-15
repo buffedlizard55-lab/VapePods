@@ -1555,6 +1555,116 @@ window.PODS_DATA = {
     },
     {
       "id": "E064",
+      "store": "Urbana - Mission",
+      "product": "Skywalker OG ORG Pod (1g)",
+      "brand": "STIIIZY",
+      "type": "pod",
+      "size": "1g",
+      "price": 24.0,
+      "price_was": null,
+      "tax": "not-stated",
+      "deal": null,
+      "source_url": "https://shop.urbananow.com/mission/menu/vapes-3322/pod-hybrid-skywalker-og-org-pod-1g-179475",
+      "source_kind": "official-site",
+      "thc": "88.03%",
+      "stock": "In stock",
+      "verified": "live",
+      "verified_date": "2026-09-15",
+      "notes": "Bloomerang-style caveat: Urbana prints no tax line - treat as PRE-TAX until the receipt says otherwise. Live 2026-09-15.",
+      "compat": "Mounts in a STIIIZY pod pen (original / Pro / Pro XL / BAR)",
+      "is_new": true,
+      "distance_miles": 4.01
+    },
+    {
+      "id": "E065",
+      "store": "Urbana - Mission",
+      "product": "White Raspberry Org Pod (1g)",
+      "brand": "STIIIZY",
+      "type": "pod",
+      "size": "1g",
+      "price": 24.0,
+      "price_was": null,
+      "tax": "not-stated",
+      "deal": null,
+      "source_url": "https://shop.urbananow.com/mission/menu/vapes-3322/pod-indica-white-raspberry-org-pod-1g-179459",
+      "source_kind": "official-site",
+      "thc": "87.22%",
+      "stock": "Only 7 left",
+      "verified": "live",
+      "verified_date": "2026-09-15",
+      "notes": "Bloomerang-style caveat: Urbana prints no tax line - treat as PRE-TAX until the receipt says otherwise. Live 2026-09-15.",
+      "compat": "Mounts in a STIIIZY pod pen (original / Pro / Pro XL / BAR)",
+      "is_new": true,
+      "distance_miles": 4.01
+    },
+    {
+      "id": "E066",
+      "store": "Urbana - Mission",
+      "product": "Gelato ORG Pod (1g)",
+      "brand": "STIIIZY",
+      "type": "pod",
+      "size": "1g",
+      "price": 24.0,
+      "price_was": null,
+      "tax": "not-stated",
+      "deal": null,
+      "source_url": "https://shop.urbananow.com/mission/menu/vapes-3322/pod-hybrid-gelato-org-pod-1g-284683",
+      "source_kind": "official-site",
+      "thc": "87.71-88.83%",
+      "stock": "In stock",
+      "verified": "live",
+      "verified_date": "2026-09-15",
+      "notes": "Bloomerang-style caveat: Urbana prints no tax line - treat as PRE-TAX until the receipt says otherwise. Live 2026-09-15.",
+      "compat": "Mounts in a STIIIZY pod pen (original / Pro / Pro XL / BAR)",
+      "is_new": true,
+      "distance_miles": 4.01
+    },
+    {
+      "id": "E067",
+      "store": "Urbana - Mission",
+      "product": "Mango CBD ORG Pod (1g)",
+      "brand": "STIIIZY",
+      "type": "pod",
+      "size": "1g",
+      "price": 26.0,
+      "price_was": null,
+      "tax": "not-stated",
+      "deal": null,
+      "source_url": "https://shop.urbananow.com/mission/menu/vapes-3322/pod-cbd-mango-cbd-org-pod-1g-179537",
+      "source_kind": "official-site",
+      "thc": "45.77% THC / 38.44% CBD",
+      "stock": "Only 8 left",
+      "verified": "live",
+      "verified_date": "2026-09-15",
+      "notes": "Bloomerang-style caveat: Urbana prints no tax line - treat as PRE-TAX until the receipt says otherwise. Live 2026-09-15.",
+      "compat": "Mounts in a STIIIZY pod pen (original / Pro / Pro XL / BAR)",
+      "is_new": true,
+      "distance_miles": 4.01
+    },
+    {
+      "id": "E068",
+      "store": "Urbana - Mission",
+      "product": "Northern Lights Lqd Pod (1g)",
+      "brand": "STIIIZY",
+      "type": "pod",
+      "size": "1g",
+      "price": 26.0,
+      "price_was": null,
+      "tax": "not-stated",
+      "deal": null,
+      "source_url": "https://shop.urbananow.com/mission/menu/vapes-3322/pod-indica-northern-lights-lqd-pod-1g-179566",
+      "source_kind": "official-site",
+      "thc": "85.06-87.49%",
+      "stock": "Only 9 left",
+      "verified": "live",
+      "verified_date": "2026-09-15",
+      "notes": "Bloomerang-style caveat: Urbana prints no tax line - treat as PRE-TAX until the receipt says otherwise. Live 2026-09-15.",
+      "compat": "Mounts in a STIIIZY pod pen (original / Pro / Pro XL / BAR)",
+      "is_new": true,
+      "distance_miles": 4.01
+    },
+    {
+      "id": "E069",
       "store": "STIIIZY Delivery (D2C)",
       "product": "Original THC Pod - all strains (0.5g)",
       "brand": "STIIIZY",
@@ -1576,7 +1686,7 @@ window.PODS_DATA = {
       "distance_miles": 0.0
     },
     {
-      "id": "E065",
+      "id": "E070",
       "store": "STIIIZY Delivery (D2C)",
       "product": "Original THC Pod - all strains (1g)",
       "brand": "STIIIZY",
@@ -1598,7 +1708,7 @@ window.PODS_DATA = {
       "distance_miles": 0.0
     },
     {
-      "id": "E066",
+      "id": "E071",
       "store": "STIIIZY Delivery (D2C)",
       "product": "STIIIZY BAR battery (dual 1g-pod battery)",
       "brand": "STIIIZY",
@@ -1620,7 +1730,7 @@ window.PODS_DATA = {
       "distance_miles": 0.0
     },
     {
-      "id": "E067",
+      "id": "E072",
       "store": "STIIIZY Delivery (D2C)",
       "product": "Live Resin Liquid Diamonds Pod (0.5g)",
       "brand": "STIIIZY",
@@ -1642,7 +1752,7 @@ window.PODS_DATA = {
       "distance_miles": 0.0
     },
     {
-      "id": "E068",
+      "id": "E073",
       "store": "STIIIZY Delivery (D2C)",
       "product": "Live Resin Liquid Diamonds Pod (1g)",
       "brand": "STIIIZY",
@@ -1664,7 +1774,7 @@ window.PODS_DATA = {
       "distance_miles": 0.0
     },
     {
-      "id": "E069",
+      "id": "E074",
       "store": "STIIIZY Delivery (D2C)",
       "product": "Liquid Diamonds All-In-One (1g)",
       "brand": "STIIIZY",
@@ -1686,7 +1796,7 @@ window.PODS_DATA = {
       "distance_miles": 0.0
     },
     {
-      "id": "E070",
+      "id": "E075",
       "store": "STIIIZY Delivery (D2C)",
       "product": "AIO Premium THC Pen (1g)",
       "brand": "STIIIZY",
@@ -1708,7 +1818,7 @@ window.PODS_DATA = {
       "distance_miles": 0.0
     },
     {
-      "id": "E071",
+      "id": "E076",
       "store": "STIIIZY Delivery (D2C)",
       "product": "CBD All-In-One 1:1 THC/CBD (Mango, 0.5g)",
       "brand": "STIIIZY",
@@ -1730,7 +1840,7 @@ window.PODS_DATA = {
       "distance_miles": 0.0
     },
     {
-      "id": "E072",
+      "id": "E077",
       "store": "North Beach Pipeline",
       "product": "STIIIZY | Blue Burst Pod (1g)",
       "brand": "STIIIZY",
@@ -1752,7 +1862,7 @@ window.PODS_DATA = {
       "distance_miles": 4.66
     },
     {
-      "id": "E073",
+      "id": "E078",
       "store": "North Beach Pipeline",
       "product": "STIIIZY Bar Battery",
       "brand": "STIIIZY",
