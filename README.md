@@ -25,18 +25,26 @@ no longer reproducible or if any entry is missing its official source link or ve
 
 ## Snapshot
 
-- **Latest pass: 2026-09-15** — 73 price lines across 7 stores, **64 re-read today**, **25 new lines added**.
-- Previous pass: 2026-09-14 (11 lines kept but clearly marked “not re-checked today”).
+- **Latest pass: 2026-09-15** — **178 price lines across 7 stores**, **168 re-read today**
+  (167 × `read`, 1 × `read on a related page`), **100 new lines added today**.
+- Previous pass: 2026-09-14 (10 lines kept but clearly marked “not re-checked today”).
 
 ### What this pass added
 
-1. **STIIIZY Parkmerced's own pick-up menu is now machine-readable** (`stiiizy.dispensary.shop`, STIIIZY's own
-   domain on the Flowhub platform) — 0.5g Original pods at **$13.00** and 1g Original pods at **$23.00**,
-   plus the store's running deals ($20 Sunday/Wednesday 1g OG pod, “Buy 2, get 1, 50% off”, first-timer 30%).
-2. **New Sunset Pipeline pod SKUs** from the official “30% OFF STIIIZY PODS & ALL-IN-ONE VAPES” sale page.
-3. **New Bloomerang SKUs** (1g pods at $19.33, 0.5g at $11.04, AIOs) verified on individual product pages.
-4. **STIIIZY D2C battery price** captured ($40.00, tax included) — previously unknown.
-5. **Urbana Geary re-checked**: still no STIIIZY-format pods on its vape menu.
+1. **STIIIZY Parkmerced's own pick-up menu, read line by line, pages 1–5 of 8**
+   (`stiiizy.dispensary.shop`, STIIIZY's own domain on the Flowhub platform) — 0.5g Original pods at
+   **$10.00 out the door** (list $13.00), 1g Original pods at **$20.00 out the door** (list $23.00),
+   0.5g Original all-in-ones at **$12.00 out the door** (list $16.00), Liquid Diamonds 0.5g pods at
+   **$14.00**, CBD pods at **$15.00** / CBD all-in-ones at **$16.00**, 1g all-in-ones at **$20.00**
+   (list $23.00) — each with the store's printed deal codes, including three `… $OTD` daily codes.
+2. **73 new Parkmerced SKUs** (24 pods, 49 all-in-ones/CBD) with per-SKU product-page links, THC values
+   and the store's printed list-vs-charged prices.
+3. **2 new Sunset Pipeline all-in-ones** ($28.82 / $32.02, pre-tax) verified on their own product pages.
+4. **Corrections**: Magic Melon 0.5g pod link fixed (one-character menu-URL difference, old link may 404);
+   North Beach Blue Burst re-confirmed out of stock; the Watermelon Z 1g all-in-one $23.00 row flagged as
+   inconsistent with its siblings — all in the site's flags section.
+5. **Coverage note**: Parkmerced menu pages 6–8 (items above $20.00) were not scanned — flagged, next pass.
+6. **Urbana Geary re-checked twice**: still no STIIIZY-format pods on its vape menu.
 
 ## What's inside
 
@@ -72,15 +80,18 @@ python3 build/build.py      # prints: entries / live-verified / new
 
 ## Flags you will see on the site (summary)
 
-- Parkmerced's menu prints no tax line; its brand-operated listing says **“ALL PRICES ARE OUT THE DOOR
-  \*Tax included\*”** → treated as tax-included, flagged.
-- Parkmerced pod prices carry an “ON SALE” flag but **no pre-discount price is printed** anywhere.
+- Parkmerced's checkout prints no tax line, but its brand-operated listing says **“ALL PRICES ARE OUT THE
+  DOOR \*Tax included\*”** and its menu prints three item-level `… $OTD` daily deal codes → treated as
+  tax-included, flagged, receipt is the final word.
+- The $20 1g OG pod is **Sunday & Wednesday** on the store listing but **daily** on the store's own menu.
 - The STIIIZY “Buy 2, get 1, 50% off” deal exists online only as an internal deal code (`CA - B2G150`).
 - **Urbana Geary carries no Stiiizy-format pods** — its vape brand list is CLAYBOURNE, GLOBS, JETTY,
   PAX LABS, TERP, TIMELESS. Urbana Mission is the nearest Urbana with STIIIZY pods ($24/1g).
-- Pipeline (Sunset & North Beach) prices are **post-discount and pre-tax**; pre-discount prices are not printed.
-- North Beach Pipeline's STIIIZY Blue Burst pod ($26.00) is **out of stock**.
-- Two Bloomerang SKUs verified on 2026-09-14 are kept but marked “not re-checked today”.
+- Sunset Pipeline prices are **post-discount and pre-tax**; pre-discount prices are not printed.
+- North Beach Pipeline's STIIIZY Blue Burst pod ($26.00) is **out of stock** (re-confirmed).
+- Four Bloomerang + five D2C + one North Beach battery rows are kept but marked “not re-checked today”;
+  one Bloomerang row is marked “read on a related page”.
+- Parkmerced menu **pages 6–8 were not scanned** — higher-priced 1g SKUs are missing, not verified absent.
 - STIIIZY's D2C store defaulted to **Los Angeles** in our fetch — confirm 94122 delivery at checkout.
 
 21+ (18+ with a valid medical recommendation). Not affiliated with STIIIZY, Pipeline Dispensaries, Urbana
