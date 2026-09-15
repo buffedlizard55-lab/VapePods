@@ -3,134 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stiiizy Pod Deals — San Francisco (94122 / Stonestown)</title>
-<meta name="description" content="Verified deals on vape pods for STIIIZY pod pens in San Francisco (94122 / Stonestown area). Every price verified from official store sources with links for manual review.">
+<title>STIIIZY Pod Deals — San Francisco (94122 / Stonestown)</title>
+<meta name="description" content="Verified STIIIZY pod prices and deals near 94122 (Stonestown / Sunset / Geary). Base price, tax status and active deals for every entry — each with the official source link for manual review.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header class="hero">
   <div class="wrap">
-    <div class="badge">✅ All entries verified line-by-line from official store sources · <span id="verified-date"></span></div>
-    <h1>Stiiizy Pod Deals<br><span class="accent">San Francisco — 94122 / Stonestown</span></h1>
+    <p class="kicker">Verified price tracker · snapshot <strong id="vd"></strong></p>
+    <h1>STIIIZY pod deals near <span class="accent">94122</span></h1>
     <p class="sub">
-      Pods that fit a <strong>STIIIZY pod pen</strong> (Bar / Pro / Pro XL), near Stonestown,
-      Sunset Pipeline (Irving St) and Urbana (Geary Blvd).
-      Base price, tax status and active deals for every entry — with the official link to check it yourself.
+      Pods that fit a <strong>STIIIZY pod pen</strong> (Original / Pro / Pro XL / BAR), priced around
+      Stonestown, Sunset Pipeline on Irving St and Urbana on Geary Blvd.
+      Every line shows the <strong>base price</strong>, whether <strong>tax is included</strong>, and
+      any <strong>deal</strong> it is part of — with the official link so you can check it yourself.
     </p>
     <div class="statbar" id="statbar"></div>
+    <p class="kicker small">
+      Nothing here is estimated from memory: each row carries the date it was read from the store's own page
+      and how it was read. Rows not re-read today are labelled <span class="chip chip-carry">not re-checked today</span>.
+    </p>
   </div>
 </header>
 
 <main class="wrap">
-  <!-- Best deals -->
+
   <section id="best">
-    <h2>Best deals right now</h2>
+    <h2>Best value right now</h2>
+    <p class="note">
+      Ranked by <strong>estimated out-the-door price per gram</strong> for pods, so tax-included stores and
+      pre-tax stores compare fairly. The estimate applies California's 15% cannabis excise tax and San
+      Francisco's 8.625% sales/use tax (official CDTFA links in the tax section) — it is a comparison tool, not a quote.
+    </p>
     <div class="best-grid" id="best-grid"></div>
   </section>
 
-  <!-- Filters -->
   <section id="filters">
-    <h2>All verified entries <span class="count" id="entry-count"></span></h2>
+    <h2>All verified prices <span class="count" id="entry-count"></span></h2>
     <div class="filterbar">
-      <label>Store
-        <select id="f-store"></select>
-      </label>
-      <label>Type
-        <select id="f-type">
-          <option value="">All</option>
-          <option value="pod">Pods (fit STIIIZY pen)</option>
-          <option value="aio">All-in-one pens</option>
-          <option value="battery">Batteries</option>
-        </select>
-      </label>
-      <label>Tax
-        <select id="f-tax">
-          <option value="">All</option>
-          <option value="included">Tax included</option>
-          <option value="not-included">Tax NOT included</option>
-          <option value="not-stated">Not stated (assume pre-tax)</option>
-        </select>
-      </label>
-      <label>Sort
-        <select id="f-sort">
-          <option value="price-asc">Price: low → high</option>
-          <option value="price-desc">Price: high → low</option>
-          <option value="dist-asc">Distance: near → far</option>
-          <option value="pergram-asc">Price per gram: low → high</option>
-        </select>
-      </label>
+      <label>Store<select id="f-store"></select></label>
+      <label>Size<select id="f-size">
+        <option value="">All</option>
+        <option value="0.5g">0.5 g</option>
+        <option value="1g">1 g</option>
+        <option value="1 ea">Battery / hardware</option>
+      </select></label>
+      <label>Tax<select id="f-tax">
+        <option value="">All</option>
+        <option value="included">Tax included</option>
+        <option value="not-included">Tax added at checkout</option>
+        <option value="not-stated">Not stated — treat as pre-tax</option>
+      </select></label>
+      <label>Sort<select id="f-sort">
+        <option value="pergram-asc">Value: est. $ per gram, low → high</option>
+        <option value="oot-asc">Est. out-the-door total: low → high</option>
+        <option value="price-asc">Base price: low → high</option>
+        <option value="dist-asc">Nearest store first</option>
+        <option value="store">Store name</option>
+      </select></label>
+      <label class="check"><input type="checkbox" id="f-new"> Only new this pass</label>
+      <label class="check"><input type="checkbox" id="f-pod" checked> Only pod-format (fits the pen)</label>
     </div>
     <div class="legend">
-      <span class="chip chip-incl">TAX INCL.</span> price includes all CA taxes ·
-      <span class="chip chip-excl">TAX NOT INCL.</span> sales tax + cannabis taxes added at checkout ·
-      <span class="chip chip-unsure">NOT STATED</span> store prints no tax note — verify at checkout
+      <span class="chip chip-incl">TAX INCLUDED</span>
+      <span class="chip chip-excl">TAX ADDED AT CHECKOUT</span>
+      <span class="chip chip-unsure">TAX NOT STATED</span>
+      <span class="chip chip-carry">NOT RE-CHECKED TODAY</span>
+      <span class="chip chip-new">NEW THIS PASS</span>
     </div>
-  </section>
-
-  <!-- Entry cards -->
-  <section id="entries">
     <div id="entry-list"></div>
   </section>
 
-  <!-- Nearby STIIIZY retail locations -->
   <section id="stores-section">
-    <h2>Nearby stores &amp; STIIIZY retail locations</h2>
-    <p class="section-note">
-      Verified store facts (address, hours, license, deal programs). Where per-product online prices
-      couldn't be machine-verified (JS-powered in-store menus), that is said explicitly — use the link for manual review.
-    </p>
+    <h2>Stores checked, deals &amp; official links</h2>
+    <p class="note">Address, hours, licence where published, tax treatment and every running promotion we could read.
+      Where per-item prices could not be read, that is stated plainly instead of guessed.</p>
     <div class="store-grid" id="store-grid"></div>
     <h3>Other official STIIIZY retail stores in SF</h3>
-    <div class="loc-list" id="loc-list"></div>
+    <div id="loc-list"></div>
   </section>
 
-  <!-- Tax explainer -->
   <section id="tax-section">
-    <h2>Tax, explained (verified)</h2>
+    <h2>Tax, explained</h2>
     <div class="tax-grid">
-      <div class="tax-card">
-        <h3>What you see on this page</h3>
-        <ul>
-          <li><strong>STIIIZY D2C (shop.stiiizy.com):</strong> every price explicitly marked <em>"(Tax Incl.)"</em> — nothing extra added.</li>
-          <li><strong>Sunset / North Beach Pipeline:</strong> product pages print <em>"*Sales tax will be added at checkout."</em> — listed price is pre-tax.</li>
-          <li><strong>Bloomerang &amp; Urbana:</strong> no tax statement on pages — treat as pre-tax (standard for licensed CA retailers) until the receipt says otherwise.</li>
-        </ul>
+      <div class="card">
+        <h3>What each store actually prints</h3>
+        <ul id="tax-store-list"></ul>
       </div>
-      <div class="tax-card">
-        <h3>What CA adds on top of a pre-tax price</h3>
+      <div class="card">
+        <h3>What California adds to a pre-tax price</h3>
         <ul>
-          <li><strong>15% — CA state cannabis excise tax</strong> (CDTFA, official; rate restored to 15% eff. Oct 1 2025, next change delayed to FY2028‑29) · <a href="https://cdtfa.ca.gov/industry/cannabis/tax-facts.htm" target="_blank" rel="noopener">cdtfa.ca.gov/industry/cannabis/tax-facts.htm</a></li>
-          <li><strong>8.625% — SF combined sales &amp; use tax</strong> (7.25% state base + 1.375% city/district) · official reference: CDTFA quarterly rate files · <a href="https://www.cdtfa.ca.gov/" target="_blank" rel="noopener">cdtfa.ca.gov</a></li>
-          <li><strong>SF local cannabis business tax</strong> — reported 2.5–5% of gross receipts depending on retailer size; confirm the exact split on your receipt · <a href="https://www.cbs8.com/article/news/local/san-diego-hikes-tax-rate-cannabis-businesses/509-1b02bf33-cc85-48b3-8741-986360290241" target="_blank" rel="noopener">CBS 8</a> / <a href="https://timesofsandiego.com/business/2025/03/10/san-diego-city-council-to-consider-tax-increase-on-local-cannabis-businesses/" target="_blank" rel="noopener">Times of San Diego</a></li>
+          <li><strong>15% cannabis excise tax</strong> — charged on gross receipts and included in the amount
+            subject to sales tax. Official: <a href="https://cdtfa.ca.gov/industry/cannabis/tax-facts.htm" target="_blank" rel="noopener">CDTFA — Tax Facts for Cannabis Businesses</a>.</li>
+          <li><strong>8.625% SF sales &amp; use tax</strong> — 7.25% statewide base + 1.375% district. Official rate
+            tables and address lookup: <a href="https://cdtfa.ca.gov/taxes-and-fees/rates.aspx" target="_blank" rel="noopener">CDTFA city &amp; county rates</a> /
+            <a href="https://maps.cdtfa.ca.gov/" target="_blank" rel="noopener">rate by address</a>.</li>
+          <li><strong>Local cannabis business tax, if passed on</strong> — CDTFA notes a local cannabis business tax
+            passed on to the customer becomes part of gross receipts, so it also attracts excise and sales tax.
+            SF's rate is set by the City; any line on the receipt is the authoritative number. Official:
+            <a href="https://cdtfa.ca.gov/industry/cannabis/tax-facts.htm" target="_blank" rel="noopener">CDTFA tax facts #note6</a>.</li>
         </ul>
-        <p class="fine">Rule of thumb for a pre-tax price in SF: expect roughly <strong>25–27% total</strong> (excise + sales + local cannabis tax, compounding). Medical (MMIC) purchases may be exempt from state excise/sales tax.</p>
+        <p class="fine">Estimate used on this page: <code>(price × 1.15) × 1.08625 ≈ price × 1.249</code>.
+          Medical (MMIC) purchases can be exempt from parts of this — ask the store.</p>
       </div>
     </div>
   </section>
 
-  <!-- Irregularities -->
   <section id="flags-section">
-    <h2>⚑ Irregularities &amp; verification flags</h2>
-    <p class="section-note">Everything that didn't verify cleanly, or that you should double-check manually. Nothing here was guessed — each flag says exactly what was found.</p>
+    <h2>Irregularities &amp; verification flags</h2>
+    <p class="note">Everything that did not verify cleanly, plus the things you should double-check before you go.
+      Each flag states exactly what was found and links the page it was found on.</p>
     <div id="flag-list"></div>
   </section>
 
-  <!-- Methodology -->
   <section id="method-section">
-    <h2>How this was verified (methodology)</h2>
+    <h2>Method — how every line was verified</h2>
     <ol class="method">
-      <li><strong>Official sources only.</strong> Every price was read from the retailer's own website (official domain linked per entry) or from the search-engine index of that official page (marked "search-index" and flagged).</li>
-      <li><strong>Live fetch vs. index.</strong> "live" = the official page was fetched and the price read directly during verification. "index" = the official page is JavaScript-rendered or geo-restricted; the price came from the official site's indexed content and needs a manual click-through.</li>
-      <li><strong>No third-party prices.</strong> Aggregators, deal blogs and unofficial "Stiiizy pod" shops were excluded (see flags). Distances are straight-line estimates computed from the listed addresses — not driving distances.</li>
-      <li><strong>Tax status per store.</strong> Taken from the store's own printed statement where present; otherwise explicitly marked "not stated" — never assumed.</li>
-      <li><strong>21+ required.</strong> Cannabis products. Prices change constantly — re-verify on the linked official page before you go. This page is a snapshot from <strong id="verified-date-2"></strong>.</li>
+      <li><strong>Official sources only.</strong> Prices are read from the retailer's own domain or from the brand's
+        own ordering domain (e.g. STIIIZY's pick-up menu on <em>stiiizy.dispensary.shop</em>). One weekly deal comes
+        from STIIIZY Parkmerced's brand-operated store listing and is labelled as such.</li>
+      <li><strong>Each row is dated.</strong> <span class="chip chip-live">live</span> means the page was fetched and
+        read on <strong id="vd2"></strong>. <span class="chip chip-carry">not re-checked today</span> means it was read on
+        <strong id="vd3"></strong> and left untouched — never silently re-dated.</li>
+      <li><strong>Tax is never assumed.</strong> If a store prints no tax note, the row says “tax not stated” and the
+        site treats it as pre-tax in the estimate.</li>
+      <li><strong>No third-party prices.</strong> Aggregator and lookalike shops were excluded; the single
+        brand-operated store listing used for the Sunday/Wednesday pod deal is flagged in the flags section.</li>
+      <li><strong>Distances are straight-line</strong> from 2161 Irving St (94122) using the addresses on file —
+        not driving distance. Not a substitute for a map.</li>
+      <li><strong>21+ / 18+ with medical.</strong> Prices change daily: re-open the linked official page before you
+        buy. This page is a snapshot, not a live feed.</li>
     </ol>
   </section>
 </main>
 
 <footer class="wrap">
-  <p>VapePods · snapshot <span id="verified-date-3"></span> · Built from official store data only · Not affiliated with STIIIZY, Pipeline Dispensaries, Urbana or Bloomerang. Must be 21+ (18+ with medical card). If you or someone you know has a substance use problem, call 1-800-826-4434. Cannabis may be habit-forming.</p>
+  <p>
+    <strong>VapePods</strong> · snapshot <span id="vd4"></span> · built only from pages on the retailers' own websites ·
+    not affiliated with STIIIZY, Pipeline Dispensaries, Urbana or Bloomerang ·
+    21+ (18+ with a valid medical recommendation) ·
+    Cannabis may be habit-forming. If you or someone you know needs help: 1-800-826-4434.
+  </p>
 </footer>
 
 <script src="data.js"></script>
