@@ -12,6 +12,9 @@ and Urbana (Geary Blvd). Every entry lists:
 **https://buffedlizard55-lab.github.io/VapePods/**
 
 Deployed from this branch by `.github/workflows/deploy-pages.yml` (GitHub Actions → `actions/deploy-pages`).
+Push events publish; pull-request events only validate the build (read-only token).
+
+**Pull request:** https://github.com/buffedlizard55-lab/VapePods/pull/1
 
 ## Snapshot date
 
