@@ -1,11 +1,10 @@
 name: Deploy VapePods site to GitHub Pages
 
-# NOTE: push events only (no pull_request trigger) — PR events run with
-# a read-only GITHUB_TOKEN and would fail the deploy step, and every PR
-# head update would spawn a run that cancels the push run via concurrency.
+# Deploys the static site in site/ to GitHub Pages, with the site files at the
+# artifact root so the published URL is https://buffedlizard55-lab.github.io/VapePods/
 on:
   push:
-    branches: [arena/01a0a0f6-vapepods]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -18,32 +17,54 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    runs-on: ubuntu-later
+  build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build site data
+      - name: Rebuild data from build/build.py
         run: |
           python3 build/build.py
-          echo "---- generated files ----"
+          echo "---- generated ----"
           ls -la site/
-          head -c 400 site/data.js
 
-      - name: Validate site files
+      - name: Validate generated data + site files
         run: |
           test -f site/index.html
           test -f site/style.css
           test -f site/app.js
           test -f site/data.js
-          node -e "const fs=require('fs');const s=fs.readFileSync('site/data.js','utf8').replace('window.PODS_DATA','global.PODS_DATA');eval(s);if(!global.PODS_DATA||!global.PODS_DATA.entries.length){process.exit(1)}console.log('entries:',global.PODS_DATA.entries.length,'stores:',global.PODS_DATA.stores.length)"
+          node -e "
+            const fs=require('fs');
+            const s=fs.readFileSync('site/data.js','utf8').replace('window.PODS_DATA','globalThis.PODS_DATA');
+            eval(s);
+            const d=globalThis.PODS_DATA;
+            if(!d||!d.entries||!d.entries.length) throw new Error('no entries in data.js');
+            const bad=d.entries.filter(e=>!e.source_url||!/^https?:\/\//.test(e.source_url));
+            if(bad.length) throw new Error('entry without an official source link: '+bad[0].id);
+            console.log('entries:',d.entries.length,'stores:',d.stores.length,'flags:',d.flags.length);
+          "
           node --check site/app.js && echo "app.js syntax OK"
+
+      - name: Assemble publish directory (site files at the artifact root)
+        run: |
+          mkdir -p _site
+          cp site/index.html site/style.css site/app.js site/data.js _site/
+          cp .nojekyll _site/ 2>/dev/null || true
+          ls -la _site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site/
+          path: _site
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
