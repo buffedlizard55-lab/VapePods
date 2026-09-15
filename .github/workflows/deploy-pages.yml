@@ -1,0 +1,49 @@
+name: Deploy VapePods site to GitHub Pages
+
+# NOTE: push events only (no pull_request trigger) — PR events run with
+# a read-only GITHUB_TOKEN and would fail the deploy step, and every PR
+# head update would spawn a run that cancels the push run via concurrency.
+on:
+  push:
+    branches: [arena/01a0a0f6-vapepods]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-later
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build site data
+        run: |
+          python3 build/build.py
+          echo "---- generated files ----"
+          ls -la site/
+          head -c 400 site/data.js
+
+      - name: Validate site files
+        run: |
+          test -f site/index.html
+          test -f site/style.css
+          test -f site/app.js
+          test -f site/data.js
+          node -e "const fs=require('fs');const s=fs.readFileSync('site/data.js','utf8').replace('window.PODS_DATA','global.PODS_DATA');eval(s);if(!global.PODS_DATA||!global.PODS_DATA.entries.length){process.exit(1)}console.log('entries:',global.PODS_DATA.entries.length,'stores:',global.PODS_DATA.stores.length)"
+          node --check site/app.js && echo "app.js syntax OK"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
